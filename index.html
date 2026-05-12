@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行政書士 山田法務事務所 | 許認可・ビザ・相続のプロフェッショナル</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: {
+          50: '#f0f4f9', 100: '#dce6f1', 200: '#b8cce3',
+          300: '#8aadd0', 400: '#5a8cbd', 500: '#3a6ea8',
+          600: '#2a5490', 700: '#1e3f72', 800: '#152d54',
+          900: '#0d1e38', 950: '#07101f',
+        },
+        gold: { 400: '#d4af6b', 500: '#c49a4a', 600: '#a07c30' }
+      },
+      fontFamily: {
+        serif: ['"Noto Serif JP"', 'serif'],
+        sans: ['"Noto Sans JP"', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  :root {
+    --navy-950: #07101f; --navy-900: #0d1e38; --navy-800: #152d54;
+    --navy-700: #1e3f72; --gold: #c49a4a; --gold-light: #d4af6b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans JP', sans-serif; color: #1a1a2e; background: #fff; overflow-x: hidden; }
+
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeInRight { from { opacity:0; transform:translateX(40px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+  @keyframes pulse-border { 0%,100% { box-shadow:0 0 0 0 rgba(196,154,74,0.4); } 50% { box-shadow:0 0 0 12px rgba(196,154,74,0); } }
+
+  .animate-fade-up { opacity:0; animation: fadeInUp 0.8s ease forwards; }
+  .animate-fade-right { opacity:0; animation: fadeInRight 0.8s ease forwards; }
+  .delay-100 { animation-delay:0.1s; } .delay-200 { animation-delay:0.2s; }
+  .delay-300 { animation-delay:0.3s; } .delay-400 { animation-delay:0.4s; }
+  .delay-500 { animation-delay:0.5s; }
+
+  .observe-fade { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .observe-fade.visible { opacity:1; transform:translateY(0); }
+  .observe-left { opacity:0; transform:translateX(-30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .observe-left.visible { opacity:1; transform:translateX(0); }
+  .observe-right { opacity:0; transform:translateX(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .observe-right.visible { opacity:1; transform:translateX(0); }
+  .observe-scale { opacity:0; transform:scale(0.92); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .observe-scale.visible { opacity:1; transform:scale(1); }
+
+  .hero-bg {
+    background: linear-gradient(135deg, #07101f 0%, #0d1e38 40%, #152d54 70%, #1e3f72 100%);
+    position:relative; overflow:hidden;
+  }
+  .hero-bg::before {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(196,154,74,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-bg::after {
+    content:''; position:absolute; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+
+  .gold-line { background:linear-gradient(90deg, transparent, var(--gold), transparent); height:1px; }
+  .gold-text {
+    background:linear-gradient(90deg, #c49a4a, #e8ca7a, #c49a4a);
+    background-size:200% auto;
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text; animation:shimmer 3s linear infinite;
+  }
+
+  .navbar {
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    background:rgba(7,16,31,0.95); border-bottom:1px solid rgba(196,154,74,0.2);
+    position:fixed; top:0; left:0; right:0; z-index:1000; transition:all 0.3s;
+  }
+
+  .section-badge {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.7rem; font-weight:600; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:12px;
+  }
+  .section-badge::before, .section-badge::after {
+    content:''; display:block; width:24px; height:1px;
+    background:var(--gold); opacity:0.7;
+  }
+
+  .service-card {
+    background:#fff; border:1px solid #e8eef5; border-radius:2px;
+    transition:all 0.3s; position:relative; overflow:hidden;
+  }
+  .service-card::before {
+    content:''; position:absolute; top:0; left:0;
+    width:3px; height:0; background:var(--gold); transition:height 0.4s;
+  }
+  .service-card:hover::before { height:100%; }
+  .service-card:hover { border-color:rgba(196,154,74,0.3); box-shadow:0 12px 40px rgba(13,30,56,0.12); transform:translateY(-4px); }
+
+  .stat-bg {
+    background:linear-gradient(135deg, #07101f, #152d54);
+    position:relative; overflow:hidden;
+  }
+  .stat-bg::before {
+    content:''; position:absolute; top:-50%; left:-50%;
+    width:200%; height:200%;
+    background:radial-gradient(circle, rgba(196,154,74,0.05) 0%, transparent 60%);
+  }
+
+  .price-card { border:1px solid #dde5f0; border-radius:2px; transition:all 0.3s; }
+  .price-card.featured {
+    background:linear-gradient(135deg, #0d1e38, #1e3f72);
+    border:2px solid var(--gold); position:relative;
+  }
+  .price-card.featured::before {
+    content:'人気プラン'; position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--gold); color:#fff; font-size:0.7rem; font-weight:700;
+    letter-spacing:0.1em; padding:3px 16px; white-space:nowrap;
+  }
+
+  .testimonial-card {
+    background:#fff; border:1px solid #e8eef5; border-left:3px solid var(--gold);
+    transition:all 0.3s;
+  }
+  .testimonial-card:hover { box-shadow:0 8px 30px rgba(13,30,56,0.08); transform:translateY(-3px); }
+
+  .faq-item { border-bottom:1px solid #e8eef5; }
+  .faq-question {
+    cursor:pointer; padding:20px 0; display:flex; justify-content:space-between;
+    align-items:center; gap:16px; font-weight:500; transition:color 0.2s;
+  }
+  .faq-question:hover { color:#1e3f72; }
+  .faq-icon {
+    width:28px; height:28px; border-radius:50%; background:#f0f4f9;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; font-size:18px; line-height:1; transition:all 0.3s;
+    color:#1e3f72; font-weight:300;
+  }
+  .faq-item.open .faq-icon { background:#152d54; color:#fff; transform:rotate(45deg); }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease, padding 0.3s; }
+  .faq-item.open .faq-answer { max-height:400px; padding-bottom:20px; }
+
+  .cta-btn-primary {
+    background:linear-gradient(135deg, #c49a4a, #e8ca7a, #c49a4a);
+    background-size:200% auto; color:#07101f; font-weight:700;
+    transition:all 0.3s; animation:pulse-border 2.5s ease-in-out infinite;
+  }
+  .cta-btn-primary:hover { background-position:right center; transform:translateY(-2px); box-shadow:0 8px 24px rgba(196,154,74,0.4); }
+  .cta-btn-secondary {
+    border:2px solid rgba(255,255,255,0.4); color:#fff;
+    background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); transition:all 0.3s;
+  }
+  .cta-btn-secondary:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.7); transform:translateY(-2px); }
+
+  .footer-bg { background:linear-gradient(180deg, #07101f 0%, #030c1a 100%); }
+  .divider-gold { height:1px; background:linear-gradient(90deg, transparent, rgba(196,154,74,0.4), transparent); }
+  .bg-section-alt { background:linear-gradient(180deg, #f7f9fc 0%, #fff 100%); }
+
+  .step-number {
+    width:48px; height:48px; border-radius:50%;
+    background:linear-gradient(135deg, #0d1e38, #1e3f72);
+    color:var(--gold); display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Sans JP',sans-serif; font-size:1.1rem; font-weight:700; flex-shrink:0;
+  }
+
+  @media (max-width:768px) { .hero-title { font-size:2rem !important; } }
+
+  ::placeholder { color:rgba(255,255,255,0.2); }
+  input[type="checkbox"] { accent-color:#c49a4a; }
+
+  /* ===== 統一数字表示システム =====
+ * すべての数字・単位を Noto Sans JP で統一
+ * 24h と同じフォント・同じ描画方式
+ */
+
+  /* ラッパー */
+  .num-block { text-align:center; }
+
+  /* 数字と単位を横並び・下端揃え */
+  .num-row {
+    display:inline-flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:2px;
+    line-height:1;
+  }
+
+  /* ★ メイン数値 — Noto Sans JP 統一 ★ */
+  .num-value {
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:2.4rem;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-0.02em;
+    display:inline-block;
+  }
+
+  /* ★ 単位（%・件・年・h など）— 同フォーム統一 ★ */
+  .num-unit {
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:1rem;
+    font-weight:500;
+    line-height:1;
+    margin-left:1px;
+    padding-bottom:0.15em;
+    display:inline-block;
+  }
+
+  /* ラベル */
+  .num-label {
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+    margin-top:6px;
+    opacity:0.55;
+    display:block;
+  }
+
+  /* カラーテーマ */
+  .num-gold .num-value { color:#d4af6b; }
+  .num-gold .num-unit  { color:rgba(212,175,107,0.8); }
+  .num-gold .num-label { color:rgba(255,255,255,0.5); }
+
+  .num-dark .num-value { color:#ffffff; }
+  .num-dark .num-unit  { color:rgba(255,255,255,0.65); }
+  .num-dark .num-label { color:rgba(255,255,255,0.45); }
+
+  .num-light .num-value { color:#0d1e38; }
+  .num-light .num-unit  { color:#6b7280; }
+  .num-light .num-label { color:#9ca3af; }
+
+  /* 料金表 ¥ 記号 */
+  .num-symbol {
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:0.9rem;
+    font-weight:700;
+    line-height:1;
+    color:#6b7280;
+    padding-bottom:0.15em;
+    display:inline-block;
+  }
+
+  /* 料金表 金額 */
+  .num-value-price {
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:2.2rem;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-0.02em;
+    color:#0d1e38;
+    display:inline-block;
+  }
+
+  /* 料金表 サフィックス（〜・/月） */
+  .num-suffix {
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:0.72rem;
+    font-weight:500;
+    line-height:1;
+    color:#9ca3af;
+    white-space:nowrap;
+    padding-bottom:0.15em;
+    display:inline-block;
+  }
+
+  /* スマホ */
+  @media (max-width:480px) {
+    .num-value       { font-size:1.8rem; }
+    .num-unit        { font-size:0.85rem; }
+    .num-value-price { font-size:1.7rem; }
+    .num-suffix      { font-size:0.62rem; }
+    .num-symbol      { font-size:0.78rem; }
+  }
+    .num-unit        { font-size:0.8rem; }
+    .num-value-price { font-size:1.7rem; }
+    .num-suffix      { font-size:0.6rem; }
+    .num-symbol      { font-size:0.75rem; }
+  }
+
+  /* ===== 料金表レイアウト ===== */
+  .pricing-wrap {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    box-shadow:0 20px 60px rgba(13,30,56,0.12);
+  }
+  .plan-std  { background:#fff; border:1px solid #dde5f0; border-right:none; padding:40px 28px; display:flex; flex-direction:column; }
+  .plan-main {
+    background:linear-gradient(160deg,#0d1e38 0%,#1e3f72 100%);
+    border:2px solid #c49a4a; padding:44px 28px 40px;
+    display:flex; flex-direction:column; position:relative;
+    z-index:2; margin:-2px 0;
+    box-shadow:0 0 0 1px rgba(196,154,74,0.2),0 24px 48px rgba(13,30,56,0.25);
+  }
+  .plan-prem { background:#fff; border:1px solid #dde5f0; border-left:none; padding:40px 28px; display:flex; flex-direction:column; }
+
+  .plan-badge-top {
+    position:absolute; top:-1px; left:50%; transform:translateX(-50%);
+    background:linear-gradient(90deg,#c49a4a,#e8ca7a); padding:4px 18px; white-space:nowrap;
+  }
+  .plan-tier { display:flex; align-items:center; gap:8px; margin-bottom:18px; }
+  .plan-tier-bar { width:3px; height:16px; flex-shrink:0; }
+  .plan-tier-label { font-size:0.6rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; }
+
+  /* 料金ブロック */
+  .plan-price-block       { background:#f7f9fc; border:1px solid #e8eef5; padding:18px 20px; margin-bottom:22px; }
+  .plan-price-block-dark  { background:rgba(255,255,255,0.05); border:1px solid rgba(196,154,74,0.25); }
+  .plan-price-tag         { font-size:0.58rem; letter-spacing:0.22em; color:#9ca3af; margin-bottom:8px; }
+  .plan-price-row         { display:flex; align-items:baseline; gap:2px; flex-wrap:nowrap; }
+
+  .plan-feature { display:flex; align-items:center; gap:10px; font-size:0.82rem; }
+  .plan-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(196,154,74,0.35),transparent); margin-bottom:22px; }
+
+  .plan-cta-outline {
+    display:block; width:100%; text-align:center; padding:13px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.08em;
+    border:2px solid #0d1e38; color:#0d1e38; background:transparent;
+    text-decoration:none; transition:all 0.25s;
+  }
+  .plan-cta-outline:hover { background:#0d1e38; color:#fff; }
+  .plan-cta-gold {
+    display:block; width:100%; text-align:center; padding:14px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.08em;
+    background:linear-gradient(135deg,#c49a4a,#e8ca7a); color:#07101f;
+    text-decoration:none; transition:all 0.25s;
+    box-shadow:0 4px 16px rgba(196,154,74,0.3);
+  }
+  .plan-cta-gold:hover { box-shadow:0 8px 24px rgba(196,154,74,0.5); transform:translateY(-1px); }
+
+  @media (max-width:767px) {
+    .pricing-wrap { grid-template-columns:1fr; box-shadow:none; gap:16px; }
+    .plan-std  { border:1px solid #dde5f0; border-right:1px solid #dde5f0; }
+    .plan-main { border:2px solid #c49a4a; margin:0; }
+    .plan-prem { border:1px solid #dde5f0; border-left:1px solid #dde5f0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar py-3 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 flex items-center justify-center" style="background:linear-gradient(135deg,#c49a4a,#e8ca7a)">
+        <span style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#07101f">行</span>
+      </div>
+      <div>
+        <div style="font-family:'Noto Serif JP';font-size:0.85rem;font-weight:700;color:#fff;letter-spacing:0.05em">山田法務事務所</div>
+        <div style="font-size:0.6rem;color:rgba(196,154,74,0.8);letter-spacing:0.15em">ADMINISTRATIVE SCRIVENER</div>
+      </div>
+    </div>
+    <a href="#contact" class="cta-btn-primary inline-flex items-center gap-2 px-5 py-2 text-sm font-bold tracking-wide">
+      <span class="hidden sm:inline">無料相談はこちら</span>
+      <span class="sm:hidden">無料相談</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg min-h-screen flex items-center pt-16">
+  <div class="max-w-6xl mx-auto px-4 md:px-8 py-20 md:py-28 w-full">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="section-badge animate-fade-up">行政書士事務所</div>
+        <h1 class="hero-title animate-fade-up delay-100 mt-4 mb-6" style="font-family:'Noto Serif JP';font-size:2.6rem;font-weight:900;line-height:1.3;color:#fff">
+          あなたの<span class="gold-text">大切な手続き</span>を<br>プロが確実に<br>サポートします
+        </h1>
+        <p class="animate-fade-up delay-200 text-sm md:text-base leading-relaxed mb-8" style="color:rgba(255,255,255,0.7)">
+          許認可申請・ビザ取得・相続手続き・会社設立など、<br>複雑な行政手続きを丁寧・迅速・確実に代行いたします。<br>初回相談は完全無料です。お気軽にご相談ください。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
+          <a href="#contact" class="cta-btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold tracking-wide">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.9 12 19.79 19.79 0 011.82 3.58 2 2 0 013.8 1.4h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            無料相談を申し込む
+          </a>
+          <a href="#services" class="cta-btn-secondary inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium tracking-wide">
+            サービスを見る
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-5 mt-10 animate-fade-up delay-400">
+          <div class="flex items-center gap-2">
+            <svg width="14" height="14" fill="#c49a4a" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span style="font-size:0.72rem;color:rgba(255,255,255,0.55)">行政書士登録番号 第〇〇〇号</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg width="14" height="14" fill="#c49a4a" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span style="font-size:0.72rem;color:rgba(255,255,255,0.55)">東京都行政書士会所属</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg width="14" height="14" fill="#c49a4a" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span style="font-size:0.72rem;color:rgba(255,255,255,0.55)">個人情報保護方針遵守</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat card -->
+      <div class="animate-fade-right delay-300">
+        <div class="stat-bg p-8 border border-white/10">
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="num-block num-gold border border-white/10 p-5">
+              <div class="num-row"><span class="num-value">500</span><span class="num-unit">+</span></div>
+              <div class="num-label">解決実績件数</div>
+            </div>
+            <div class="num-block num-gold border border-white/10 p-5">
+              <div class="num-row"><span class="num-value">98</span><span class="num-unit">%</span></div>
+              <div class="num-label">依頼者満足度</div>
+            </div>
+            <div class="num-block num-gold border border-white/10 p-5">
+              <div class="num-row"><span class="num-value">10</span><span class="num-unit">年</span></div>
+              <div class="num-label">業界経験年数</div>
+            </div>
+            <div class="num-block num-gold border border-white/10 p-5">
+              <div class="num-row"><span class="num-value">24</span><span class="num-unit">h</span></div>
+              <div class="num-label">お問い合わせ対応</div>
+            </div>
+          </div>
+          <div class="gold-line"></div>
+          <div class="flex items-center justify-center gap-3 pt-5">
+            <div class="flex -space-x-2">
+              <div class="w-9 h-9 rounded-full border-2 border-navy-900 flex items-center justify-center text-xs font-bold" style="background:#c49a4a;color:#07101f">山</div>
+              <div class="w-9 h-9 rounded-full border-2 border-navy-900 flex items-center justify-center text-xs font-bold" style="background:#1e3f72;color:#fff">田</div>
+              <div class="w-9 h-9 rounded-full border-2 border-navy-900 flex items-center justify-center text-xs font-bold" style="background:#2a5490;color:#fff">法</div>
+            </div>
+            <p style="font-size:0.72rem;color:rgba(255,255,255,0.5)">代表・スタッフ一同<br>全力でサポートします</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-gold"></div>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-14 observe-fade">
+      <div class="section-badge">サービス</div>
+      <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px">取扱い業務</h2>
+      <p class="mt-3 text-sm text-gray-500 max-w-xl mx-auto">幅広い行政手続きに対応しております。まずはお気軽にご相談ください。</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="service-card p-7 observe-fade" style="transition-delay:0.05s">
+        <div class="w-12 h-12 flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#f0f4f9,#dce6f1)">
+          <svg width="22" height="22" fill="none" stroke="#1e3f72" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:8px">許認可申請</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">建設業・飲食業・運送業など、各種許認可の取得・更新を代行。複雑な要件を正確に整理します。</p>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>建設業許可</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>飲食店営業許可</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>古物商許可</li>
+        </ul>
+      </div>
+      <div class="service-card p-7 observe-fade" style="transition-delay:0.1s">
+        <div class="w-12 h-12 flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#f0f4f9,#dce6f1)">
+          <svg width="22" height="22" fill="none" stroke="#1e3f72" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:8px">在留資格・ビザ申請</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">外国人の在留資格取得・変更・更新申請を専門的にサポート。入管法の複雑な要件に正確に対応します。</p>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>就労ビザ申請</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>配偶者ビザ</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>永住・帰化申請</li>
+        </ul>
+      </div>
+      <div class="service-card p-7 observe-fade" style="transition-delay:0.15s">
+        <div class="w-12 h-12 flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#f0f4f9,#dce6f1)">
+          <svg width="22" height="22" fill="none" stroke="#1e3f72" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:8px">相続・遺言書</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">相続手続きの全般をサポート。遺産分割協議書の作成から各種名義変更まで丁寧に対応します。</p>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>遺産分割協議書作成</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>相続関係説明図</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>公正証書遺言サポート</li>
+        </ul>
+      </div>
+      <div class="service-card p-7 observe-fade" style="transition-delay:0.2s">
+        <div class="w-12 h-12 flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#f0f4f9,#dce6f1)">
+          <svg width="22" height="22" fill="none" stroke="#1e3f72" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:8px">会社設立・定款作成</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">株式会社・合同会社の設立手続きを全面サポート。創業融資のアドバイスも行います。</p>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>定款作成・認証</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>設立登記サポート</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>各種届出代行</li>
+        </ul>
+      </div>
+      <div class="service-card p-7 observe-fade" style="transition-delay:0.25s">
+        <div class="w-12 h-12 flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#f0f4f9,#dce6f1)">
+          <svg width="22" height="22" fill="none" stroke="#1e3f72" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:8px">各種契約書作成</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">賃貸借・売買・業務委託など、ビジネスに必要な各種契約書を法的に適正な内容で作成します。</p>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>賃貸借契約書</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>業務委託契約書</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>内容証明書作成</li>
+        </ul>
+      </div>
+      <div class="service-card p-7 observe-fade" style="transition-delay:0.3s">
+        <div class="w-12 h-12 flex items-center justify-center mb-5" style="background:linear-gradient(135deg,#f0f4f9,#dce6f1)">
+          <svg width="22" height="22" fill="none" stroke="#1e3f72" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:8px">補助金・助成金申請</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">事業者向けの補助金・助成金申請をサポート。複雑な申請書類の作成から提出まで代行します。</p>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>小規模事業者持続化補助金</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>ものづくり補助金</li>
+          <li class="flex items-center gap-2"><span style="color:var(--gold)">▸</span>各種助成金申請</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="py-20 md:py-24 bg-section-alt">
+  <div class="max-w-5xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-14 observe-fade">
+      <div class="section-badge">ご依頼の流れ</div>
+      <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px">ご依頼からご完了まで</h2>
+    </div>
+    <div class="space-y-6 md:space-y-0 md:flex md:items-start md:gap-0">
+      <div class="flex md:flex-col items-start md:items-center gap-4 observe-fade md:flex-1">
+        <div class="step-number">01</div>
+        <div class="md:text-center md:mt-4">
+          <div style="font-family:'Noto Serif JP';font-weight:700;color:#0d1e38;font-size:0.9rem;margin-bottom:4px">無料相談</div>
+          <p class="text-xs text-gray-500 leading-relaxed">お電話・メール・ビデオ通話で現状をヒアリング。最適な手続き方法をご案内します。</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center justify-center flex-shrink-0" style="padding-top:24px;width:32px">
+        <svg width="20" height="20" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="flex md:flex-col items-start md:items-center gap-4 observe-fade md:flex-1" style="transition-delay:0.1s">
+        <div class="step-number">02</div>
+        <div class="md:text-center md:mt-4">
+          <div style="font-family:'Noto Serif JP';font-weight:700;color:#0d1e38;font-size:0.9rem;margin-bottom:4px">お見積り・契約</div>
+          <p class="text-xs text-gray-500 leading-relaxed">明確な費用をご提示。ご納得いただけた後、ご契約いただきます。</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center justify-center flex-shrink-0" style="padding-top:24px;width:32px">
+        <svg width="20" height="20" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="flex md:flex-col items-start md:items-center gap-4 observe-fade md:flex-1" style="transition-delay:0.2s">
+        <div class="step-number">03</div>
+        <div class="md:text-center md:mt-4">
+          <div style="font-family:'Noto Serif JP';font-weight:700;color:#0d1e38;font-size:0.9rem;margin-bottom:4px">書類作成・申請</div>
+          <p class="text-xs text-gray-500 leading-relaxed">必要書類の収集から申請書類の作成・提出まで全てお任せください。</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center justify-center flex-shrink-0" style="padding-top:24px;width:32px">
+        <svg width="20" height="20" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="flex md:flex-col items-start md:items-center gap-4 observe-fade md:flex-1" style="transition-delay:0.3s">
+        <div class="step-number">04</div>
+        <div class="md:text-center md:mt-4">
+          <div style="font-family:'Noto Serif JP';font-weight:700;color:#0d1e38;font-size:0.9rem;margin-bottom:4px">完了・アフターフォロー</div>
+          <p class="text-xs text-gray-500 leading-relaxed">手続き完了後もご質問に対応。更新時期のご連絡など継続サポートします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="py-20 md:py-28" style="background:linear-gradient(135deg,#07101f 0%,#0d1e38 50%,#152d54 100%)">
+  <div class="max-w-6xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-14 observe-fade">
+      <div class="section-badge" style="color:var(--gold)">実績</div>
+      <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#fff;margin-top:8px">数字で見る実績</h2>
+      <p class="mt-3 text-sm text-white/50 max-w-xl mx-auto">10年間の実績が、私たちへの信頼を証明しています</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="num-block num-gold border border-white/10 p-6 md:p-8 observe-scale" style="background:rgba(255,255,255,0.03)">
+        <div class="num-row"><span class="num-value">500</span><span class="num-unit">件</span></div>
+        <div class="num-label">総解決件数</div>
+      </div>
+      <div class="num-block num-gold border border-white/10 p-6 md:p-8 observe-scale" style="background:rgba(255,255,255,0.03);transition-delay:0.1s">
+        <div class="num-row"><span class="num-value">98</span><span class="num-unit">%</span></div>
+        <div class="num-label">依頼者満足度</div>
+      </div>
+      <div class="num-block num-gold border border-white/10 p-6 md:p-8 observe-scale" style="background:rgba(255,255,255,0.03);transition-delay:0.2s">
+        <div class="num-row"><span class="num-value">10</span><span class="num-unit">年</span></div>
+        <div class="num-label">業界経験年数</div>
+      </div>
+      <div class="num-block num-gold border border-white/10 p-6 md:p-8 observe-scale" style="background:rgba(255,255,255,0.03);transition-delay:0.3s">
+        <div class="num-row"><span class="num-value">95</span><span class="num-unit">%</span></div>
+        <div class="num-label">許可取得成功率</div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="border border-white/10 p-6 observe-fade" style="background:rgba(255,255,255,0.03)">
+        <div style="color:var(--gold);font-size:1.1rem;font-weight:700;font-family:'Cormorant Garamond';margin-bottom:10px;letter-spacing:0.04em">許認可申請</div>
+        <div class="num-block num-dark" style="text-align:left">
+          <div class="num-row" style="justify-content:flex-start"><span class="num-value">200</span><span class="num-unit">件超</span></div>
+        </div>
+        <p class="text-white/40 text-xs mt-3 leading-relaxed">建設業・飲食店・風俗営業など多岐にわたる許認可申請の実績があります。</p>
+      </div>
+      <div class="border border-white/10 p-6 observe-fade" style="background:rgba(255,255,255,0.03);transition-delay:0.1s">
+        <div style="color:var(--gold);font-size:1.1rem;font-weight:700;font-family:'Cormorant Garamond';margin-bottom:10px;letter-spacing:0.04em">在留資格申請</div>
+        <div class="num-block num-dark" style="text-align:left">
+          <div class="num-row" style="justify-content:flex-start"><span class="num-value">150</span><span class="num-unit">件超</span></div>
+        </div>
+        <p class="text-white/40 text-xs mt-3 leading-relaxed">就労ビザ・配偶者ビザ・永住許可など複雑なケースも豊富に経験しています。</p>
+      </div>
+      <div class="border border-white/10 p-6 observe-fade" style="background:rgba(255,255,255,0.03);transition-delay:0.2s">
+        <div style="color:var(--gold);font-size:1.1rem;font-weight:700;font-family:'Cormorant Garamond';margin-bottom:10px;letter-spacing:0.04em">相続・遺言</div>
+        <div class="num-block num-dark" style="text-align:left">
+          <div class="num-row" style="justify-content:flex-start"><span class="num-value">100</span><span class="num-unit">件超</span></div>
+        </div>
+        <p class="text-white/40 text-xs mt-3 leading-relaxed">複雑な相続関係の整理から遺産分割協議書作成まで迅速に対応しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-20 md:py-28" style="background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%)">
+  <div class="max-w-6xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-14 observe-fade">
+      <div class="section-badge">料金</div>
+      <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px">明確な料金体系</h2>
+      <p class="mt-3 text-sm text-gray-500 max-w-xl mx-auto">透明性の高い料金設定で、安心してご依頼いただけます。<br>※ご状況により変動する場合があります。詳細はご相談ください。</p>
+    </div>
+
+    <div class="pricing-wrap observe-scale">
+
+      <!-- STANDARD -->
+      <div class="plan-std">
+        <div class="plan-tier">
+          <div class="plan-tier-bar" style="background:#b8cce3"></div>
+          <span class="plan-tier-label" style="color:#8aadd0">STANDARD</span>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:5px">書類作成プラン</h3>
+        <p style="font-size:0.72rem;color:#9ca3af;margin-bottom:22px;line-height:1.5">各種申請書類の作成のみを代行</p>
+
+        <div class="plan-price-block">
+          <div class="plan-price-tag">PRICE</div>
+          <div class="plan-price-row">
+            <span class="num-symbol">¥</span>
+            <span class="num-value-price">30,000</span>
+            <span class="num-suffix">〜（税別）</span>
+          </div>
+        </div>
+
+        <div class="plan-divider"></div>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:11px;flex:1">
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>申請書類作成</li>
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>書類チェック</li>
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>メールサポート</li>
+          <li class="plan-feature" style="color:#d1d5db"><svg width="14" height="14" fill="none" stroke="#d1d5db" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>申請代行</li>
+          <li class="plan-feature" style="color:#d1d5db"><svg width="14" height="14" fill="none" stroke="#d1d5db" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>アフターフォロー</li>
+        </ul>
+        <a href="#contact" class="plan-cta-outline">このプランで相談する</a>
+      </div>
+
+      <!-- FULL SUPPORT (FEATURED) -->
+      <div class="plan-main">
+        <div class="plan-badge-top">
+          <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.18em;color:#07101f">人気 NO.1</span>
+        </div>
+        <div class="plan-tier" style="margin-top:10px">
+          <div class="plan-tier-bar" style="background:#c49a4a"></div>
+          <span class="plan-tier-label" style="color:#c49a4a">RECOMMENDED</span>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#fff;margin-bottom:5px">フルサポートプラン</h3>
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.5);margin-bottom:22px;line-height:1.5">申請から完了まで全てお任せ</p>
+
+        <div class="plan-price-block plan-price-block-dark">
+          <div class="plan-price-tag" style="color:rgba(196,154,74,0.65)">PRICE</div>
+          <div class="plan-price-row">
+            <span class="num-symbol" style="color:#c49a4a">¥</span>
+            <span class="num-value-price" style="color:#d4af6b">60,000</span>
+            <span class="num-suffix" style="color:rgba(196,154,74,0.6)">〜（税別）</span>
+          </div>
+        </div>
+
+        <div class="plan-divider"></div>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:11px;flex:1">
+          <li class="plan-feature" style="color:rgba(255,255,255,0.85)"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>申請書類作成</li>
+          <li class="plan-feature" style="color:rgba(255,255,255,0.85)"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>書類チェック</li>
+          <li class="plan-feature" style="color:rgba(255,255,255,0.85)"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>電話・メールサポート</li>
+          <li class="plan-feature" style="color:rgba(255,255,255,0.85)"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>申請代行（窓口提出）</li>
+          <li class="plan-feature" style="color:rgba(255,255,255,0.85)"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>完了後アフターフォロー</li>
+        </ul>
+        <a href="#contact" class="plan-cta-gold">このプランで相談する</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan-prem">
+        <div class="plan-tier">
+          <div class="plan-tier-bar" style="background:#1e3f72"></div>
+          <span class="plan-tier-label" style="color:#2a5490">PREMIUM</span>
+        </div>
+        <h3 style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#0d1e38;margin-bottom:5px">顧問契約プラン</h3>
+        <p style="font-size:0.72rem;color:#9ca3af;margin-bottom:22px;line-height:1.5">継続的な法務サポートが必要な方に</p>
+
+        <div class="plan-price-block">
+          <div class="plan-price-tag">MONTHLY</div>
+          <div class="plan-price-row">
+            <span class="num-symbol">¥</span>
+            <span class="num-value-price">20,000</span>
+            <span class="num-suffix">/月〜（税別）</span>
+          </div>
+        </div>
+
+        <div class="plan-divider"></div>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:11px;flex:1">
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>月次法務相談（無制限）</li>
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>各種書類作成（割引）</li>
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>優先対応</li>
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>更新時期ご連絡</li>
+          <li class="plan-feature" style="color:#374151"><svg width="14" height="14" fill="none" stroke="#c49a4a" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0"><polyline points="20,6 9,17 4,12"/></svg>緊急時対応</li>
+        </ul>
+        <a href="#contact" class="plan-cta-outline">このプランで相談する</a>
+      </div>
+
+    </div><!-- /pricing-wrap -->
+
+    <p class="text-center text-xs text-gray-400 mt-10 observe-fade leading-relaxed">
+      ※ 実費（印紙代・証明書取得費用等）は別途実費となります。<br>
+      ※ 内容の複雑さにより料金が変動する場合がございます。まずは無料相談にてお見積りいたします。
+    </p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-20 md:py-28 bg-section-alt">
+  <div class="max-w-6xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-14 observe-fade">
+      <div class="section-badge">お客様の声</div>
+      <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px">ご依頼いただいたお客様から</h2>
+      <div class="flex items-center justify-center gap-2 mt-3">
+        <div class="flex">
+          <svg width="16" height="16" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <span class="text-sm text-gray-500">平均評価 4.9 / 5.0（98件）</span>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="testimonial-card p-6 observe-fade">
+        <div class="flex mb-3"><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">「建設業許可の取得でお世話になりました。書類の準備から申請まで全て代行してもらい、本当に助かりました。自分では絶対に無理だったと思います。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold" style="background:#0d1e38;color:#c49a4a">T</div>
+          <div><div class="text-sm font-medium text-gray-800">田中 様</div><div class="text-xs text-gray-400">建設業 / 建設業許可取得</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card p-6 observe-fade" style="transition-delay:0.1s">
+        <div class="flex mb-3"><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">「配偶者ビザの取得でご相談しました。複雑な書類準備も丁寧に説明してくださり、不安なく進められました。無事に取得でき感謝しています。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold" style="background:#0d1e38;color:#c49a4a">S</div>
+          <div><div class="text-sm font-medium text-gray-800">鈴木 様</div><div class="text-xs text-gray-400">個人 / 配偶者ビザ取得</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card p-6 observe-fade" style="transition-delay:0.2s">
+        <div class="flex mb-3"><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">「父が亡くなり相続手続きでパニックになっていた時に相談しました。優しく丁寧に説明してもらい、複雑な手続きをスムーズに完了できました。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold" style="background:#0d1e38;color:#c49a4a">Y</div>
+          <div><div class="text-sm font-medium text-gray-800">山本 様</div><div class="text-xs text-gray-400">個人 / 相続手続き</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card p-6 observe-fade" style="transition-delay:0.3s">
+        <div class="flex mb-3"><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">「会社設立時に定款作成をお願いしました。公証役場での認証手続きまで同行いただき、スムーズに法人設立できました。起業家の方に強くお勧めします。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold" style="background:#0d1e38;color:#c49a4a">K</div>
+          <div><div class="text-sm font-medium text-gray-800">木村 様</div><div class="text-xs text-gray-400">法人 / 会社設立サポート</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card p-6 observe-fade" style="transition-delay:0.4s">
+        <div class="flex mb-3"><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">「補助金申請のサポートをお願いし、採択されました！申請書類の作成から事業計画書の添削まで、きめ細かく対応いただき本当に感謝しています。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold" style="background:#0d1e38;color:#c49a4a">N</div>
+          <div><div class="text-sm font-medium text-gray-800">中村 様</div><div class="text-xs text-gray-400">法人 / 補助金申請サポート</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card p-6 observe-fade" style="transition-delay:0.5s">
+        <div class="flex mb-3"><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#c49a4a" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg width="12" height="12" fill="#e5e7eb" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">「永住申請で複雑なケースにもかかわらず、丁寧にサポートいただきました。入管局への対応も迅速で、許可が下りた時は本当に嬉しかったです。」</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold" style="background:#0d1e38;color:#c49a4a">O</div>
+          <div><div class="text-sm font-medium text-gray-800">小林 様</div><div class="text-xs text-gray-400">個人 / 永住許可申請</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-14 observe-fade">
+      <div class="section-badge">よくある質問</div>
+      <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px">FAQ</h2>
+    </div>
+    <div class="observe-fade">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="text-sm md:text-base" style="font-family:'Noto Serif JP'">初回相談は本当に無料ですか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p class="text-sm text-gray-500 leading-relaxed">はい、初回のご相談は完全無料です。お電話・メール・オンライン（Zoom等）での相談に対応しております。ご相談の内容に関わらず、費用は一切かかりません。ご相談後に正式なお見積りをご提示し、ご納得いただいてからご契約となります。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="text-sm md:text-base" style="font-family:'Noto Serif JP'">どのくらいの期間で手続きが完了しますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p class="text-sm text-gray-500 leading-relaxed">手続きの種類によって異なります。例えば、飲食店営業許可は約2〜4週間、建設業許可は約1〜2ヶ月、在留資格の変更は2〜3ヶ月が目安です。ご相談時に手続きの種類に応じた期間をご案内します。迅速対応が必要な場合もご相談ください。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="text-sm md:text-base" style="font-family:'Noto Serif JP'">遠方でも依頼できますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p class="text-sm text-gray-500 leading-relaxed">はい、全国対応が可能です。書類のやり取りはメール・郵送・クラウドストレージを活用し、打ち合わせはオンライン（Zoom・LINE等）で行えます。一部の手続きでは現地確認が必要な場合がございますが、その際も事前にご説明いたします。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="text-sm md:text-base" style="font-family:'Noto Serif JP'">料金の支払いはいつ、どのように行いますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p class="text-sm text-gray-500 leading-relaxed">ご契約時に着手金（報酬の50%程度）をいただき、手続き完了後に残金をお支払いいただく形が基本です。お支払いは銀行振込またはクレジットカード（一部対応）が可能です。お支払い方法の詳細はご相談時にご確認ください。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="text-sm md:text-base" style="font-family:'Noto Serif JP'">申請が許可されない場合はどうなりますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p class="text-sm text-gray-500 leading-relaxed">申請前に十分なヒアリングと要件確認を行い、許可取得の見込みがある場合のみ申請を進めます。万一、不許可になった場合は再申請の可能性と対策をご提案します。報酬については事前にご相談の上、個別に対応いたします。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="text-sm md:text-base" style="font-family:'Noto Serif JP'">相談内容の守秘義務はありますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <p class="text-sm text-gray-500 leading-relaxed">行政書士は法律により守秘義務が課せられております。ご相談いただいた内容は厳正に管理し、外部に漏らすことは一切ございません。また、個人情報保護方針に基づき、適切な管理を行っております。安心してご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="py-16 md:py-20" style="background:linear-gradient(135deg,#07101f 0%,#1e3f72 100%)">
+  <div class="max-w-4xl mx-auto px-4 md:px-8 text-center observe-scale">
+    <div class="gold-line mb-10 mx-auto" style="max-width:80px"></div>
+    <div style="font-family:'Cormorant Garamond';font-size:0.9rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:16px;text-transform:uppercase">Free Consultation</div>
+    <h2 style="font-family:'Noto Serif JP';font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.5">まずは無料でご相談ください</h2>
+    <p class="text-white/60 text-sm md:text-base mb-10 max-w-lg mx-auto leading-relaxed">手続きの詳細、費用、期間など何でもお気軽にお問い合わせください。<br>専門家が丁寧にご説明いたします。</p>
+    <a href="#contact" class="cta-btn-primary inline-flex items-center justify-center gap-3 px-10 py-4 text-base font-bold tracking-wide">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.9 12 19.79 19.79 0 011.82 3.58 2 2 0 013.8 1.4h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      無料相談を申し込む
+    </a>
+    <div class="gold-line mt-10 mx-auto" style="max-width:80px"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 md:py-28 bg-section-alt">
+  <div class="max-w-6xl mx-auto px-4 md:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="observe-left">
+        <div class="section-badge">事務所について</div>
+        <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px;margin-bottom:20px">山田法務事務所について</h2>
+        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-5">平成〇〇年に開業以来、「依頼者の立場に立った丁寧なサポート」を経営理念に、許認可・ビザ・相続・会社設立など幅広い行政手続きに対応してまいりました。</p>
+        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-8">複雑な法的手続きを分かりやすくご説明し、依頼者様が安心して任せられる事務所を目指しています。どんな小さなご不安でも、まずはご相談ください。</p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-4 p-4 bg-white border border-gray-100">
+            <div class="w-10 h-10 flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#0d1e38,#1e3f72)">
+              <svg width="16" height="16" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+            </div>
+            <div><div style="font-size:0.85rem;font-weight:700;color:#0d1e38;margin-bottom:2px">行政書士登録番号 第〇〇〇〇〇号</div><div class="text-xs text-gray-400">東京都行政書士会所属</div></div>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-white border border-gray-100">
+            <div class="w-10 h-10 flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#0d1e38,#1e3f72)">
+              <svg width="16" height="16" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+            </div>
+            <div><div style="font-size:0.85rem;font-weight:700;color:#0d1e38;margin-bottom:2px">申請取次行政書士</div><div class="text-xs text-gray-400">出入国在留管理局申請取次資格保有</div></div>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-white border border-gray-100">
+            <div class="w-10 h-10 flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#0d1e38,#1e3f72)">
+              <svg width="16" height="16" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+            </div>
+            <div><div style="font-size:0.85rem;font-weight:700;color:#0d1e38;margin-bottom:2px">プライバシーマーク取得</div><div class="text-xs text-gray-400">個人情報の適切な管理を徹底</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="observe-right">
+        <div class="border border-gray-200 p-8 bg-white">
+          <div class="text-center mb-6">
+            <div class="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold" style="background:linear-gradient(135deg,#0d1e38,#1e3f72);color:#c49a4a;font-family:'Noto Serif JP'">山</div>
+            <h3 style="font-family:'Noto Serif JP';font-size:1.2rem;font-weight:700;color:#0d1e38">山田 太郎</h3>
+            <p class="text-xs text-gray-400 mt-1 tracking-wide">行政書士 / 代表</p>
+          </div>
+          <div class="divider-gold mb-6"></div>
+          <div class="space-y-3 text-sm">
+            <div class="flex gap-3">
+              <span class="text-gray-400 w-20 flex-shrink-0 text-xs pt-0.5">経歴</span>
+              <p class="text-gray-600 text-xs leading-relaxed">〇〇大学法学部卒業後、行政機関に10年勤務。その後独立開業し、現在に至る。</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-gray-400 w-20 flex-shrink-0 text-xs pt-0.5">専門分野</span>
+              <p class="text-gray-600 text-xs leading-relaxed">在留資格・建設業許可・相続・会社設立</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-gray-400 w-20 flex-shrink-0 text-xs pt-0.5">資格</span>
+              <p class="text-gray-600 text-xs leading-relaxed">行政書士、申請取次行政書士、FP技能士2級</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-gray-400 w-20 flex-shrink-0 text-xs pt-0.5">一言</span>
+              <p class="text-gray-600 text-xs leading-relaxed">「依頼者の方が本業に集中できるよう、面倒な手続きは全てお任せください。」</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 md:py-28" style="background:linear-gradient(135deg,#07101f 0%,#0d1e38 50%,#152d54 100%)">
+  <div class="max-w-4xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-14 observe-fade">
+      <div class="section-badge" style="color:var(--gold)">お問い合わせ</div>
+      <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#fff;margin-top:8px">無料相談・お問い合わせ</h2>
+      <p class="mt-3 text-sm text-white/50 max-w-lg mx-auto">以下のフォームよりお気軽にお問い合わせください。24時間以内にご返信いたします。</p>
+    </div>
+    <!-- LINE 誘導バナー -->
+    <a href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener"
+       class="observe-fade flex items-center justify-between gap-4 mb-6 px-6 py-4 transition-all hover:opacity-90"
+       style="background:linear-gradient(135deg,#06C755,#00a040);text-decoration:none;border:1px solid rgba(255,255,255,0.15)">
+      <div class="flex items-center gap-4">
+        <!-- LINE公式ロゴ -->
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+          <rect width="36" height="36" rx="8" fill="white" fill-opacity="0.2"/>
+          <path d="M18 7C11.925 7 7 11.477 7 17c0 4.418 2.865 8.22 7.07 9.87.518.19.434.513.324.897l-.523 1.953c-.16.597.218.607.435.442 2.672-1.784 4.374-2.967 7.17-4.886.64.09 1.296.136 1.961.136 6.075 0 11-4.477 11-10S24.075 7 18 7z" fill="white"/>
+          <path d="M15 19.5h-2v-5h1.25v3.75H15V19.5zm1.25 0v-5h1.25v5h-1.25zm5.5 0h-1.25l-2-3v3H17.25v-5h1.25l2 3v-3H22.5v5h-.75zm3.25 0h-3v-5h3v1.25h-1.75v.75h1.75v1.25h-1.75v.5H25v1.25z" fill="#06C755"/>
+        </svg>
+        <div>
+          <div style="color:#fff;font-size:0.95rem;font-weight:700;font-family:'Noto Sans JP'">LINEで気軽に相談する</div>
+          <div style="color:rgba(255,255,255,0.8);font-size:0.72rem;margin-top:2px">友だち追加して無料相談 • 24時間受付</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.2);padding:8px 16px;color:#fff;font-size:0.75rem;font-weight:700;white-space:nowrap;border-radius:2px">
+        友だち追加 →
+      </div>
+    </a>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+      <div class="border border-white/10 p-4 text-center observe-scale" style="background:rgba(255,255,255,0.03)">
+        <svg class="mx-auto mb-2" width="22" height="22" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.9 12 19.79 19.79 0 011.82 3.58 2 2 0 013.8 1.4h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <div class="text-white/40 text-xs mb-1">お電話</div>
+        <div style="color:#fff;font-size:0.85rem;font-weight:700">03-XXXX-XXXX</div>
+        <div class="text-white/30 text-xs mt-1">平日 9:00〜18:00</div>
+      </div>
+      <div class="border border-white/10 p-4 text-center observe-scale" style="background:rgba(255,255,255,0.03);transition-delay:0.05s">
+        <!-- LINE icon -->
+        <div class="mx-auto mb-2 flex items-center justify-center" style="width:22px;height:22px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C6.477 2 2 6.038 2 11c0 3.566 2.184 6.677 5.455 8.386.239.13.2.35.149.51l-.375 1.398c-.115.43.157.437.314.318 1.922-1.282 3.145-2.132 5.155-3.514.46.065.932.098 1.411.098 5.523 0 9.891-3.962 9.891-8.196C24 6.038 17.523 2 12 2z" fill="#c49a4a"/>
+          </svg>
+        </div>
+        <div class="text-white/40 text-xs mb-1">LINE</div>
+        <div style="color:#fff;font-size:0.85rem;font-weight:700">公式LINE</div>
+        <div class="text-white/30 text-xs mt-1">24時間受付</div>
+      </div>
+      <div class="border border-white/10 p-4 text-center observe-scale" style="background:rgba(255,255,255,0.03);transition-delay:0.1s">
+        <svg class="mx-auto mb-2" width="22" height="22" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="text-white/40 text-xs mb-1">メール</div>
+        <div style="color:#fff;font-size:0.7rem;font-weight:700">info@yamada-gyosei.jp</div>
+        <div class="text-white/30 text-xs mt-1">24時間受付</div>
+      </div>
+      <div class="border border-white/10 p-4 text-center observe-scale" style="background:rgba(255,255,255,0.03);transition-delay:0.15s">
+        <svg class="mx-auto mb-2" width="22" height="22" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="text-white/40 text-xs mb-1">所在地</div>
+        <div style="color:#fff;font-size:0.75rem;font-weight:700">東京都〇〇区〇〇1-2-3</div>
+        <div class="text-white/30 text-xs mt-1">〇〇駅 徒歩3分</div>
+      </div>
+    </div>
+    <div class="border border-white/10 p-7 md:p-10 observe-fade" style="background:rgba(255,255,255,0.04)">
+      <div id="form-success" class="hidden text-center py-8">
+        <svg class="mx-auto mb-4" width="48" height="48" fill="none" stroke="#c49a4a" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+        <h3 style="font-family:'Noto Serif JP';color:#fff;font-size:1.2rem;font-weight:700;margin-bottom:8px">送信完了しました</h3>
+        <p class="text-white/50 text-sm">24時間以内にご返信いたします。</p>
+      </div>
+      <form id="contact-form" onsubmit="handleSubmit(event)" class="space-y-5">
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs text-white/50 mb-2 tracking-wide">お名前 <span style="color:var(--gold)">*</span></label>
+            <input type="text" required placeholder="山田 太郎" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:0.875rem;padding:12px 16px;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='#c49a4a'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          </div>
+          <div>
+            <label class="block text-xs text-white/50 mb-2 tracking-wide">会社名（任意）</label>
+            <input type="text" placeholder="〇〇株式会社" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:0.875rem;padding:12px 16px;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='#c49a4a'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs text-white/50 mb-2 tracking-wide">メールアドレス <span style="color:var(--gold)">*</span></label>
+            <input type="email" required placeholder="example@email.com" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:0.875rem;padding:12px 16px;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='#c49a4a'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          </div>
+          <div>
+            <label class="block text-xs text-white/50 mb-2 tracking-wide">電話番号</label>
+            <input type="tel" placeholder="090-XXXX-XXXX" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:0.875rem;padding:12px 16px;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='#c49a4a'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs text-white/50 mb-2 tracking-wide">ご相談内容 <span style="color:var(--gold)">*</span></label>
+          <select required style="width:100%;background:#1a2a45;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);font-size:0.875rem;padding:12px 16px;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='#c49a4a'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+            <option value="">選択してください</option>
+            <option>許認可申請</option>
+            <option>在留資格・ビザ申請</option>
+            <option>相続・遺言書</option>
+            <option>会社設立・定款作成</option>
+            <option>各種契約書作成</option>
+            <option>補助金・助成金申請</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs text-white/50 mb-2 tracking-wide">お問い合わせ詳細</label>
+          <textarea rows="4" placeholder="ご相談の内容を詳しくお書きください（任意）" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:0.875rem;padding:12px 16px;outline:none;transition:border-color 0.2s;resize:none" onfocus="this.style.borderColor='#c49a4a'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+        </div>
+        <div class="flex items-start gap-3">
+          <input type="checkbox" required id="privacy" style="margin-top:3px;flex-shrink:0;accent-color:#c49a4a">
+          <label for="privacy" class="text-xs leading-relaxed cursor-pointer" style="color:rgba(255,255,255,0.4)">
+            <a href="#" style="color:var(--gold);text-decoration:underline">プライバシーポリシー</a>に同意の上、送信します。いただいた個人情報は相談対応のみに使用し、第三者に提供することはありません。
+          </label>
+        </div>
+        <button type="submit" class="cta-btn-primary w-full py-4 font-bold tracking-wide flex items-center justify-center gap-3" style="flex-direction:row;flex-wrap:nowrap">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:3px">
+            <span style="font-size:0.95rem;font-weight:700;line-height:1.2">無料相談を申し込む</span>
+            <span style="font-size:0.72rem;font-weight:500;opacity:0.85;letter-spacing:0.04em">（24時間以内返信）</span>
+          </span>
+        </button>
+
+        <!-- OR divider -->
+        <div style="display:flex;align-items:center;gap:12px;margin:16px 0">
+          <div style="flex:1;height:1px;background:rgba(255,255,255,0.1)"></div>
+          <span style="font-size:0.7rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em">または</span>
+          <div style="flex:1;height:1px;background:rgba(255,255,255,0.1)"></div>
+        </div>
+
+        <!-- LINE button -->
+        <a href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener"
+           style="display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:14px;background:linear-gradient(135deg,#06C755,#00a040);text-decoration:none;transition:all 0.25s;box-shadow:0 4px 16px rgba(6,199,85,0.25)"
+           onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'"
+           onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+          <!-- LINE logo SVG -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex-shrink:0">
+            <path d="M12 2C6.477 2 2 6.038 2 11c0 3.566 2.184 6.677 5.455 8.386.239.13.2.35.149.51l-.375 1.398c-.115.43.157.437.314.318 1.922-1.282 3.145-2.132 5.155-3.514.46.065.932.098 1.411.098 5.523 0 9.891-3.962 9.891-8.196C24 6.038 17.523 2 12 2z" fill="white"/>
+            <path d="M9.5 12.5h-1.2V9h.75v2.25H9.5V12.5zm.75 0V9h.75v3.5h-.75zm3.3 0h-.75L11.55 10.7v1.8h-.75V9h.75l1.2 1.8V9h.75v3.5h-.75zm1.95 0h-1.8V9h1.8v.75h-1.05v.45h1.05v.75h-1.05v.3H15.5v.75z" fill="#06C755"/>
+          </svg>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:2px">
+            <span style="color:#fff;font-size:0.92rem;font-weight:700;font-family:'Noto Sans JP',sans-serif;line-height:1.2">LINEで相談する</span>
+            <span style="color:rgba(255,255,255,0.85);font-size:0.68rem;font-weight:500;letter-spacing:0.05em">友だち追加して気軽にメッセージ</span>
+          </span>
+        </a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-bg py-12 px-4 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 flex items-center justify-center" style="background:linear-gradient(135deg,#c49a4a,#e8ca7a)">
+            <span style="font-family:'Noto Serif JP';font-size:1rem;font-weight:700;color:#07101f">行</span>
+          </div>
+          <div>
+            <div style="font-family:'Noto Serif JP';font-size:0.85rem;font-weight:700;color:#fff">山田法務事務所</div>
+            <div style="font-size:0.6rem;color:rgba(196,154,74,0.6);letter-spacing:0.15em">YAMADA LEGAL OFFICE</div>
+          </div>
+        </div>
+        <p class="text-xs text-white/30 leading-relaxed max-w-xs">許認可・ビザ・相続・会社設立など、複雑な行政手続きを丁寧・迅速・確実に代行いたします。</p>
+      </div>
+      <div>
+        <h4 class="text-xs text-white/50 tracking-widest mb-4 uppercase">サービス</h4>
+        <ul class="space-y-2 text-xs text-white/30">
+          <li><a href="#services" class="hover:text-white/60 transition-colors">許認可申請</a></li>
+          <li><a href="#services" class="hover:text-white/60 transition-colors">在留資格・ビザ申請</a></li>
+          <li><a href="#services" class="hover:text-white/60 transition-colors">相続・遺言書</a></li>
+          <li><a href="#services" class="hover:text-white/60 transition-colors">会社設立</a></li>
+          <li><a href="#services" class="hover:text-white/60 transition-colors">補助金・助成金</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs text-white/50 tracking-widest mb-4 uppercase">お問い合わせ</h4>
+        <div class="space-y-1 text-xs text-white/30">
+          <p>〒XXX-XXXX 東京都〇〇区〇〇1-2-3</p>
+          <p class="mt-2">TEL: 03-XXXX-XXXX</p>
+          <p>Mail: info@yamada-gyosei.jp</p>
+          <p class="mt-2">営業時間: 平日 9:00〜18:00</p>
+        </div>
+      </div>
+    </div>
+    <div class="divider-gold mb-6"></div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/20">
+      <p>© 2024 山田法務事務所 All Rights Reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white/50 transition-colors">プライバシーポリシー</a>
+        <a href="#" class="hover:text-white/50 transition-colors">特定商取引法表記</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<a href="#" id="scroll-top" class="fixed bottom-6 right-6 w-11 h-11 flex items-center justify-center z-50 transition-all duration-300" style="background:linear-gradient(135deg,#c49a4a,#e8ca7a);opacity:0;transform:translateY(20px)">
+  <svg width="16" height="16" fill="none" stroke="#07101f" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</a>
+
+<script>
+// Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.observe-fade, .observe-left, .observe-right, .observe-scale').forEach(el => observer.observe(el));
+
+// FAQ
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Form
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contact-form');
+  form.style.transition = 'opacity 0.3s';
+  form.style.opacity = '0';
+  setTimeout(() => {
+    form.classList.add('hidden');
+    document.getElementById('form-success').classList.remove('hidden');
+  }, 300);
+}
+
+// Scroll top
+const scrollTopBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    scrollTopBtn.style.opacity = '1';
+    scrollTopBtn.style.transform = 'translateY(0)';
+  } else {
+    scrollTopBtn.style.opacity = '0';
+    scrollTopBtn.style.transform = 'translateY(20px)';
+  }
+});
+
+// Staggered delay for grid items
+document.querySelectorAll('.observe-fade[style*="transition-delay"]').forEach(el => {
+  const delay = el.style.transitionDelay || '0s';
+  el.style.transitionDelay = delay;
+});
+</script>
+</body>
+</html>
