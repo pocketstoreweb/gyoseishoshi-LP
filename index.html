@@ -38,6 +38,12 @@ tailwind.config = {
     --navy-700: #1e3f72; --gold: #c49a4a; --gold-light: #d4af6b;
   }
   * { box-sizing: border-box; }
+  /* 日本語テキストの自然な改行 */
+  body, p, h1, h2, h3, h4, li, span, div {
+    word-break: auto-phrase;
+    overflow-wrap: break-word;
+  }
+  p, li { line-height: 1.9; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Noto Sans JP', sans-serif; color: #1a1a2e; background: #fff; overflow-x: hidden; }
 
@@ -177,7 +183,7 @@ tailwind.config = {
     font-family:'Noto Sans JP',sans-serif; font-size:1.1rem; font-weight:700; flex-shrink:0;
   }
 
-  @media (max-width:768px) { .hero-title { font-size:2rem !important; } }
+  /* hero-title はclamp()で自動調整 */
 
   ::placeholder { color:rgba(255,255,255,0.2); }
   input[type="checkbox"] { accent-color:#c49a4a; }
@@ -391,14 +397,14 @@ tailwind.config = {
             <span style="font-size:0.65rem;color:#4ade80;font-weight:700;letter-spacing:0.12em">LINE即日対応</span>
           </div>
         </div>
-        <h1 class="hero-title animate-fade-up delay-100 mt-2 mb-5" style="font-family:'Noto Serif JP';font-size:2.6rem;font-weight:900;line-height:1.3;color:#fff">
-          <span style="display:block;font-size:1.1rem;font-weight:500;color:rgba(255,255,255,0.6);margin-bottom:8px;letter-spacing:0.04em">「手続きが複雑で、どこに頼めばいいか…」</span>
-          その悩み、<span class="gold-text">丸ごとお任せ</span><br>ください
+        <h1 class="hero-title animate-fade-up delay-100 mt-2 mb-5" style="font-family:'Noto Serif JP';font-size:clamp(1.75rem,5vw,2.6rem);font-weight:900;line-height:1.4;color:#fff">
+          <span style="display:block;font-size:clamp(0.85rem,2.5vw,1.1rem);font-weight:500;color:rgba(255,255,255,0.6);margin-bottom:8px;letter-spacing:0.02em">「手続きが複雑で、どこに頼めばいいか…」</span>
+          その悩み、<span class="gold-text">丸ごとお任せ</span>ください
         </h1>
         <p class="animate-fade-up delay-200 text-sm md:text-base leading-relaxed mb-6" style="color:rgba(255,255,255,0.7)">
-          許認可・ビザ・相続・会社設立など複雑な行政手続きを<br>
-          <strong style="color:#fff">迅速・確実・リーズナブル</strong>に代行。<br>
-          初回相談は完全無料です。
+          許認可・ビザ・相続・会社設立など、複雑な行政手続きを
+          <strong style="color:#fff">迅速・確実・リーズナブル</strong>に代行します。
+          <span style="display:block;margin-top:6px">初回相談は完全無料です。</span>
         </p>
         <!-- CTA buttons -->
         <div class="flex flex-col sm:flex-row gap-3 animate-fade-up delay-300">
@@ -483,7 +489,7 @@ tailwind.config = {
               <div class="w-9 h-9 rounded-full border-2 border-navy-900 flex items-center justify-center text-xs font-bold" style="background:#1e3f72;color:#fff">田</div>
               <div class="w-9 h-9 rounded-full border-2 border-navy-900 flex items-center justify-center text-xs font-bold" style="background:#2a5490;color:#fff">法</div>
             </div>
-            <p style="font-size:0.72rem;color:rgba(255,255,255,0.5)">代表・スタッフ一同<br>全力でサポートします</p>
+            <p style="font-size:0.72rem;color:rgba(255,255,255,0.5)">代表・スタッフ一同、全力でサポートします</p>
           </div>
         </div>
       </div>
@@ -627,7 +633,7 @@ tailwind.config = {
   <div class="max-w-3xl mx-auto text-center">
     <p style="color:rgba(255,255,255,0.6);font-size:0.8rem;margin-bottom:8px">どのサービスか迷っていても大丈夫</p>
     <h3 style="font-family:'Noto Serif JP';color:#fff;font-size:1.35rem;font-weight:700;margin-bottom:20px;line-height:1.5">
-      まず<span style="color:#d4af6b">「こういう状況なのですが…」</span>と<br class="sm:hidden">気軽にご連絡ください
+      まず<span style="color:#d4af6b">「こういう状況なのですが…」</span>と<br>気軽にご連絡ください
     </h3>
     <div style="display:flex;flex-direction:column;gap:12px;align-items:center;max-width:400px;margin:0 auto">
       <a href="https://lin.ee/XXXXXXX" target="_blank" rel="noopener"
@@ -752,7 +758,7 @@ tailwind.config = {
     <div class="text-center mb-14 observe-fade">
       <div class="section-badge">料金</div>
       <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px">明確な料金体系</h2>
-      <p class="mt-3 text-sm text-gray-500 max-w-xl mx-auto">透明性の高い料金設定で、安心してご依頼いただけます。<br>※ご状況により変動する場合があります。詳細はご相談ください。</p>
+      <p class="mt-3 text-sm text-gray-500 max-w-xl mx-auto">透明性の高い料金設定で、安心してご依頼いただけます。<span style="display:block;margin-top:4px">※ご状況により変動する場合があります。詳細はご相談ください。</span></p>
     </div>
 
     <div class="pricing-wrap observe-scale">
@@ -850,8 +856,7 @@ tailwind.config = {
     </div><!-- /pricing-wrap -->
 
     <p class="text-center text-xs text-gray-400 mt-10 observe-fade leading-relaxed">
-      ※ 実費（印紙代・証明書取得費用等）は別途実費となります。<br>
-      ※ 内容の複雑さにより料金が変動する場合がございます。まずは無料相談にてお見積りいたします。
+      ※ 実費（印紙代・証明書取得費用等）は別途となります。<br>内容の複雑さにより料金が変動する場合がございます。まずは無料相談にてお見積りいたします。
     </p>
   </div>
 </section>
@@ -940,7 +945,7 @@ tailwind.config = {
           <div class="faq-icon">+</div>
         </div>
         <div class="faq-answer">
-          <p class="text-sm text-gray-500 leading-relaxed">はい、初回のご相談は完全無料です。お電話・メール・オンライン（Zoom等）での相談に対応しております。ご相談の内容に関わらず、費用は一切かかりません。ご相談後に正式なお見積りをご提示し、ご納得いただいてからご契約となります。</p>
+          <p class="text-sm text-gray-500 leading-relaxed">はい、初回のご相談は完全無料です。お電話・メール・オンライン（Zoom等）での相談に対応しております。<br>ご相談の内容に関わらず費用は一切かかりません。ご納得いただいてからご契約となります。</p>
         </div>
       </div>
       <div class="faq-item">
@@ -949,7 +954,7 @@ tailwind.config = {
           <div class="faq-icon">+</div>
         </div>
         <div class="faq-answer">
-          <p class="text-sm text-gray-500 leading-relaxed">手続きの種類によって異なります。例えば、飲食店営業許可は約2〜4週間、建設業許可は約1〜2ヶ月、在留資格の変更は2〜3ヶ月が目安です。ご相談時に手続きの種類に応じた期間をご案内します。迅速対応が必要な場合もご相談ください。</p>
+          <p class="text-sm text-gray-500 leading-relaxed">手続きの種類によって異なります。飲食店営業許可は約2〜4週間、建設業許可は約1〜2ヶ月、在留資格の変更は2〜3ヶ月が目安です。<br>ご相談時に詳しくご案内します。迅速対応が必要な場合もご相談ください。</p>
         </div>
       </div>
       <div class="faq-item">
@@ -958,7 +963,7 @@ tailwind.config = {
           <div class="faq-icon">+</div>
         </div>
         <div class="faq-answer">
-          <p class="text-sm text-gray-500 leading-relaxed">はい、全国対応が可能です。書類のやり取りはメール・郵送・クラウドストレージを活用し、打ち合わせはオンライン（Zoom・LINE等）で行えます。一部の手続きでは現地確認が必要な場合がございますが、その際も事前にご説明いたします。</p>
+          <p class="text-sm text-gray-500 leading-relaxed">はい、全国対応が可能です。書類のやり取りはメール・郵送・クラウドストレージを活用し、打ち合わせはオンライン（Zoom・LINE等）で行えます。<br>一部の手続きで現地確認が必要な場合は、事前にご説明いたします。</p>
         </div>
       </div>
       <div class="faq-item">
@@ -967,7 +972,7 @@ tailwind.config = {
           <div class="faq-icon">+</div>
         </div>
         <div class="faq-answer">
-          <p class="text-sm text-gray-500 leading-relaxed">ご契約時に着手金（報酬の50%程度）をいただき、手続き完了後に残金をお支払いいただく形が基本です。お支払いは銀行振込またはクレジットカード（一部対応）が可能です。お支払い方法の詳細はご相談時にご確認ください。</p>
+          <p class="text-sm text-gray-500 leading-relaxed">ご契約時に着手金（報酬の50%程度）をいただき、手続き完了後に残金をお支払いいただく形が基本です。<br>銀行振込またはクレジットカード（一部対応）でお支払いいただけます。</p>
         </div>
       </div>
       <div class="faq-item">
@@ -976,7 +981,7 @@ tailwind.config = {
           <div class="faq-icon">+</div>
         </div>
         <div class="faq-answer">
-          <p class="text-sm text-gray-500 leading-relaxed">申請前に十分なヒアリングと要件確認を行い、許可取得の見込みがある場合のみ申請を進めます。万一、不許可になった場合は再申請の可能性と対策をご提案します。報酬については事前にご相談の上、個別に対応いたします。</p>
+          <p class="text-sm text-gray-500 leading-relaxed">申請前に十分なヒアリングと要件確認を行い、許可取得の見込みがある場合のみ申請を進めます。<br>万一、不許可になった場合は再申請の可能性と対策をご提案します。報酬については個別にご相談いたします。</p>
         </div>
       </div>
       <div class="faq-item">
@@ -985,7 +990,7 @@ tailwind.config = {
           <div class="faq-icon">+</div>
         </div>
         <div class="faq-answer">
-          <p class="text-sm text-gray-500 leading-relaxed">行政書士は法律により守秘義務が課せられております。ご相談いただいた内容は厳正に管理し、外部に漏らすことは一切ございません。また、個人情報保護方針に基づき、適切な管理を行っております。安心してご相談ください。</p>
+          <p class="text-sm text-gray-500 leading-relaxed">行政書士は法律により守秘義務が課せられております。ご相談内容は厳正に管理し、外部に漏らすことは一切ございません。<br>個人情報保護方針に基づき適切に管理しておりますので、安心してご相談ください。</p>
         </div>
       </div>
     </div>
@@ -998,7 +1003,8 @@ tailwind.config = {
     <div class="gold-line mb-10 mx-auto" style="max-width:80px"></div>
     <div style="font-family:'Cormorant Garamond';font-size:0.9rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:16px;text-transform:uppercase">Free Consultation</div>
     <h2 style="font-family:'Noto Serif JP';font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.5">まずは無料でご相談ください</h2>
-    <p class="text-white/60 text-sm md:text-base mb-10 max-w-lg mx-auto leading-relaxed">手続きの詳細、費用、期間など何でもお気軽にお問い合わせください。<br>専門家が丁寧にご説明いたします。</p>
+    <p class="text-white/60 text-sm md:text-base mb-10 max-w-lg mx-auto leading-relaxed">手続きの詳細、費用、期間など何でもお気軽にお問い合わせください。
+          <span style="display:block;margin-top:4px">専門家が丁寧にご説明いたします。</span></p>
     <a href="#contact" class="cta-btn-primary inline-flex items-center justify-center gap-3 px-10 py-4 text-base font-bold tracking-wide">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.9 12 19.79 19.79 0 011.82 3.58 2 2 0 013.8 1.4h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
       無料相談を申し込む
@@ -1014,8 +1020,9 @@ tailwind.config = {
       <div class="observe-left">
         <div class="section-badge">事務所について</div>
         <h2 style="font-family:'Noto Serif JP';font-size:1.9rem;font-weight:700;color:#0d1e38;margin-top:8px;margin-bottom:20px">山田法務事務所について</h2>
-        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-5">平成27年に開業以来、「依頼者の立場に立った丁寧なサポート」を経営理念に、許認可・ビザ・相続・会社設立など幅広い行政手続きに対応してまいりました。</p>
-        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-8">複雑な法的手続きを分かりやすくご説明し、依頼者様が安心して任せられる事務所を目指しています。どんな小さなご不安でも、まずはご相談ください。</p>
+        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-5">平成27年の開業以来、「依頼者の立場に立った丁寧なサポート」を経営理念に、許認可・ビザ・相続・会社設立など幅広い行政手続きに対応してまいりました。</p>
+        <p class="text-sm md:text-base text-gray-600 leading-relaxed mb-8">複雑な法的手続きを分かりやすくご説明し、依頼者様が安心して任せられる事務所を目指しています。
+        どんな小さなご不安でも、まずはご相談ください。</p>
         <div class="space-y-3">
           <div class="flex items-start gap-4 p-4 bg-white border border-gray-100">
             <div class="w-10 h-10 flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#0d1e38,#1e3f72)">
